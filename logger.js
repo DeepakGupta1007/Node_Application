@@ -6,4 +6,7 @@ function log(message){
     console.log(message);
 }
 
-module.exports.log = log;
+// module.exports.log = log;
+
+//Way-2 Can also export without naming and use directly in the export section
+module.exports=log;
