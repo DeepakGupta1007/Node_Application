@@ -1,6 +1,6 @@
 //Creating a module
-console.log(__filename);
-console.log(__dirname);
+// console.log(__filename);
+// console.log(__dirname);
 //Output-----------------
 // F:\Projects\Node_Application\logger.js
 // F:\Projects\Node_Application
