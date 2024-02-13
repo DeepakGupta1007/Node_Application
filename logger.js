@@ -1,4 +1,11 @@
 //Creating a module
+console.log(__filename);
+console.log(__dirname);
+//Output-----------------
+// F:\Projects\Node_Application\logger.js
+// F:\Projects\Node_Application
+// -----------------------
+
 var url = 'http://mylogger.io/log';
 
 function log(message){

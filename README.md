@@ -26,3 +26,17 @@ var message =" ";
 
 //Every file in node is considered as a module
 console.log(module);
+
+
+2. Module Wrapper Function -
+At runtime a s file is converted into a function
+
+(function(exports,require,module,__fileName,__dirName){//This is known as module wrapper function
+    var url = 'http://mylogger.io/log';
+    function log(message){
+        //Send an http request
+        console.log(message);
+    }
+module.exports=log;
+})
+This is conversion of module, it always wraps inside a function.
