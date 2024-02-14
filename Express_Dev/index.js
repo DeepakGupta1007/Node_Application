@@ -1,16 +1,26 @@
 const express = require('express');
 //Return a function
-
 const app =express();
+
+const courses =[
+    {id:1,name:'A'},
+    {id:2,name:'B'},
+    {id:3,name:'C'}
+]
 
 app.get('/',(req,res)=>{
     res.send('Hello Deepak');
 });
 
-
 //TO read parameters from url
 app.get('/api/courses/:id',(req,res)=>{
-    res.send(req.params.id);
+    const course = courses.find(c=> c.id=== parseInt(req.params.id));
+    if(!course){
+        res.status(404).send("Id not found");
+    }
+    else{
+    res.send(course);
+    }
 })
 
 app.get('/api/posts/:y/:m',(req,res)=>{
@@ -23,7 +33,7 @@ app.get('/api/posts/:y',(req,res)=>{
 })
 // ---------
 app.get('/api/courses',(req,res)=>{
-    res.send(["B.Tech","BBA"]);
+    res.send(courses);
 })
 
 const port = process.env.PORT || 4000;
