@@ -7,9 +7,13 @@ app.get('/',(req,res)=>{
     res.send('Hello Deepak');
 });
 
+
+
 app.get('/api/courses',(req,res)=>{
     res.send(["B.Tech","BBA"]);
 })
-app.listen(4000,(data,error)=>{
-    console.log("Listening on port 4000");
+
+const port = process.env.PORT || 4000;
+app.listen(port,(data,error)=>{
+    console.log(`Listening on port ${port}`);
 })

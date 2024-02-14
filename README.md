@@ -82,3 +82,7 @@ GET,POST,PUT,DELETE
 2. Why Express?
 It makes code readable for more url's.
 It is very fast and lightweight.
+3. Use nodemon to restart server every time if something changes
+Command- nodemon file_name.js
+4. Need to use environment variables, a file having constant variable.
+Using export PORT =5000; or set PORT=5000;
