@@ -64,3 +64,17 @@ In another project ,import it and can use.
 Make changes in a file.
 Run npm version minor
 Run npm publish
+
+Express-
+
+1. What are RESTFUL services?
+Used in client server architecture.
+Communication happens through http protocols.Server exposes services to http protocol which client requests.
+
+REST stands for Representational State Transfer.
+It helps to CREATE,DELETE,UPDATE,DELETE data.(CRUD operations)
+
+
+There are following HTTP methods-
+GET,POST,PUT,DELETE
+
