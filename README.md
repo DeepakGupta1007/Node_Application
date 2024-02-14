@@ -78,3 +78,7 @@ It helps to CREATE,DELETE,UPDATE,DELETE data.(CRUD operations)
 There are following HTTP methods-
 GET,POST,PUT,DELETE
 
+
+2. Why Express?
+It makes code readable for more url's.
+It is very fast and lightweight.
