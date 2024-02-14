@@ -86,3 +86,5 @@ It is very fast and lightweight.
 Command- nodemon file_name.js
 4. Need to use environment variables, a file having constant variable.
 Using export PORT =5000; or set PORT=5000;
+
+5. Route Parameters.
