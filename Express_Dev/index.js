@@ -70,6 +70,7 @@ app.put('/api/courses/:id',(req,res)=>{
     const course = courses.find(c=> c.id=== parseInt(req.params.id));
     if(!course){
         res.status(404).send("Id not found");
+        return;
     }
     //Validate
     //If invalid ,return 400-Bad request
@@ -83,6 +84,23 @@ app.put('/api/courses/:id',(req,res)=>{
     course.name = req.body.name;
     res.send(courses);
 })
+
+
+app.delete('/api/courses/:id',(req,res)=>{
+    //Look up the course
+    //Not existing
+    const course = courses.find(c=> c.id=== parseInt(req.params.id));
+    if(!course){
+        res.status(404).send("Id not found");
+        return;
+    }
+
+    const index = courses.indexOf(course);
+    courses.splice(index,1);
+
+    res.send(course);
+})
+
 
 
 const port = process.env.PORT || 4000;
@@ -99,3 +117,5 @@ const validateCourse=(course)=>{
 
     return Joi.validate(course,schema);
 }
+
+//Create a project Vidly ,create an api /api/genres to add, update and get the list of genres.
