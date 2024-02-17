@@ -105,3 +105,8 @@ helmet
 passport
 
 4. How to enable certain features on debug and production mode.
+5. How to store configuration settings?
+npm rc
+npm config
+Configuration set/get process ?
+Command to change the env- set NODE_ENV=development/production
