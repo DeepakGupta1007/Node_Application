@@ -1,7 +1,11 @@
+const morgan =require('morgan');
+const helmet = require('helmet');
 const express = require('express');
 const Joi= require('joi');
 const logger = require('./logger');
 const authenticating = require('./authenticator');
+
+
 //Return a function
 const app =express();
 
@@ -12,6 +16,9 @@ app.use(express.urlencoded({extended:true}));//key value
 //This is used to serve the static content of the file. Test readme.txt in public folder.As localhost/readme.txt
 app.use(express.static('public'));
 
+
+app.use(helmet());
+app.use(morgan('tiny'));
 app.use(logger);
 app.use(authenticating);
 

@@ -88,3 +88,19 @@ Command- nodemon file_name.js
 Using export PORT =5000; or set PORT=5000;
 
 5. Route Parameters.
+6. How to test api in postman.
+
+
+Express-Advanced Topics(MiddleWare,Configuration,Debugging,Templating engines)
+1. Middleware 
+    Request Processing Pipeline(This is known as request processing pipeline.)
+Request---->{.json()}----->{route()}----->Response
+
+A middleware function is basically a function that takes a request object and returns a response to the client or redirect to another function
+
+2. How to create a custom middleware function.
+3. Express JS Third party middlewares.
+
+helmet 
+passport
+
