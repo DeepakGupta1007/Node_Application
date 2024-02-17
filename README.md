@@ -122,3 +122,7 @@ How to set multiple flags => set DEBUG= app:startup,app:db
 How to set all flags=> set DEBUG= app:*
 
 It color codes all the namespaces.
+7. Template Engines-
+Pug
+Mustache
+EJS

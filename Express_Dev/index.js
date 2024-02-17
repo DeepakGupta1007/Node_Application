@@ -13,19 +13,15 @@ const authenticating = require('./authenticator');
 //Return a function
 const app =express();
 
-
+app.set('view engine','pug');
+app.set('views','./Views')//To put all your views or all your template imside a folder  //Defult view
 console.log(`Node Env:${process.env.NODE_ENV}`) //undefined
 console.log(`App:${app.get('env')}`);
 
-
 app.use(express.json());//Populate req.body
-app.use(express.urlencoded({extended:true}));//key value
-
-
+app.use(express.urlencoded({extended:true}));
 //This is used to serve the static content of the file. Test readme.txt in public folder.As localhost/readme.txt
 app.use(express.static('public'));
-
-
 app.use(helmet());
 
 //Configuration
@@ -49,7 +45,7 @@ const courses =[
 ]
 
 app.get('/',(req,res)=>{
-    res.send('Hello Deepak');
+    res.render('index',{title :"Deepak",message:"Hello World!!"});
 });
 
 //TO read parameters from url
