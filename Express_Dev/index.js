@@ -5,7 +5,12 @@ const authenticating = require('./authenticator');
 //Return a function
 const app =express();
 
-app.use(express.json());
+app.use(express.json());//Populate req.body
+app.use(express.urlencoded({extended:true}));//key value
+
+
+//This is used to serve the static content of the file. Test readme.txt in public folder.As localhost/readme.txt
+app.use(express.static('public'));
 
 app.use(logger);
 app.use(authenticating);
