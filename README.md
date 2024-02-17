@@ -126,3 +126,16 @@ It color codes all the namespaces.
 Pug
 Mustache
 EJS
+
+8. How to integrate database?
+Cassandra,MySQL,MOngoDB
+
+We can use mongoose built on top of mongo.
+
+9. How about authentication?
+How to secure API Endpoints?
+
+
+10. Structuring the project.
+Projects-->
+Move all the genres API to a folder 
