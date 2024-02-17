@@ -104,3 +104,4 @@ A middleware function is basically a function that takes a request object and re
 helmet 
 passport
 
+4. How to enable certain features on debug and production mode.

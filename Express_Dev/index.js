@@ -9,6 +9,11 @@ const authenticating = require('./authenticator');
 //Return a function
 const app =express();
 
+
+console.log(`Node Env:${process.env.NODE_ENV}`) //undefined
+console.log(`App:${app.get('env')}`);
+
+
 app.use(express.json());//Populate req.body
 app.use(express.urlencoded({extended:true}));//key value
 
@@ -18,7 +23,13 @@ app.use(express.static('public'));
 
 
 app.use(helmet());
-app.use(morgan('tiny'));
+
+if(app.get('env')==='development'){
+//Command to change the environment- >set NODE_ENV=production
+    app.use(morgan('tiny'));
+    console.log('Morgan enabled');
+}
+
 app.use(logger);
 app.use(authenticating);
 
