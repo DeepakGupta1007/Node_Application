@@ -110,3 +110,15 @@ npm rc
 npm config
 Configuration set/get process ?
 Command to change the env- set NODE_ENV=development/production
+6. Debugging-
+How to debug effectively.
+Ans - Use Debug package.
+
+
+Command to set a flag ->set DEBUG= app:startup This can be used to set the flag
+Command to set null flag ->set DEBUG=
+
+How to set multiple flags => set DEBUG= app:startup,app:db
+How to set all flags=> set DEBUG= app:*
+
+It color codes all the namespaces.

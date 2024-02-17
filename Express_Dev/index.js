@@ -1,3 +1,6 @@
+const startupDebugger = require('debug')('app:startup');
+const dbDebugger = require('debug')('app:db');
+
 const config=require('config');
 const morgan =require('morgan');
 const helmet = require('helmet');
@@ -33,9 +36,9 @@ console.log('Mail Password: '+ config.get('mail.password'));
 if(app.get('env')==='development'){
 //Command to change the environment- >set NODE_ENV=production
     app.use(morgan('tiny'));
-    console.log('Morgan enabled');
+    startupDebugger('Morgan enabled');
 }
-
+dbDebugger('DB Logger');
 app.use(logger);
 app.use(authenticating);
 
