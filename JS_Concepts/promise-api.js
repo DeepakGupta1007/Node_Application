@@ -9,7 +9,7 @@ const q =Promise.reject(new Error("Error occured")); //Better to pass Error obje
 q.catch(error=> console.log(error.message));
 
 
-//Parallel promise
+//Parallel promise--------------------------------------------------------------
 
 const p1 = new Promise((resolve,reject)=>{
     setTimeout(()=>{
