@@ -2,9 +2,9 @@ const getUser=(id)=>{
     return new Promise((resolve,reject)=>{
         //Some async work
         setTimeout(()=>{
-            console.log("Reading a user from database....");
+            resolve({id: id,userName:'DeepakGupta1007'})
         },2000);
-        resolve({id: id,userName:'DeepakGupta1007'})
+        console.log("Reading a user from database....");
     })
     
 };
