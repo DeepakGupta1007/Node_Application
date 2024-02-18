@@ -4,7 +4,6 @@ const config=require('config');
 const morgan =require('morgan');
 const helmet = require('helmet');
 const express = require('express');
-const Joi= require('joi');
 const logger = require('./middleware/logger');
 const authenticating = require('./middleware/authenticator');
 const courses =require('./routes/courses')

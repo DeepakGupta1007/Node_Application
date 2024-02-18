@@ -1,7 +1,6 @@
 const express = require('express');
 const router =express.Router();
-
-
+const Joi= require('joi');
 
 const courses =[
     {id:1,name:'A'},
@@ -89,11 +88,12 @@ router.delete('/:id',(req,res)=>{
 });
 
 const validateCourse=(course)=>{
-    const schema={
-        name:Joi.string().min(3).required,
-    };
+    console.log(course);
+    const schema=Joi.object({
+        name:Joi.string().min(3).required(),
+    });
 
-    return Joi.validate(course,schema);
+    return schema.validate(course);
 }
 
 

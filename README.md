@@ -139,3 +139,5 @@ How to secure API Endpoints?
 10. Structuring the project.
 Projects-->
 Move all the genres API to a folder 
+
+Development of REST API's is done using express.
