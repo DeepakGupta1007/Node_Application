@@ -1,16 +1,25 @@
+const getUser=(id,callback)=>{
+    setTimeout(()=>{
+        console.log("Reading a user from database....");
+        callback({id: id,userName:'DeepakGupta1007'});
+    },2000)
+};
+
 //Example ofAsync Code 
 console.log("Before");
-const print=(obj)=>{
-    console.log(obj.userName);
-};
-// getUser(1,print);
-console.log(getUser(2));
-console.log('After');
+getUser(1,(user)=>{
+    getRepositories(user.userName,(obj)=>{
+        obj.forEach(data => {
+            console.log(data);
+        });
+    });
+});
 
-function getUser(id,callback){
+console.log('After');
+//Assesment APi to fetch the repos of the username
+function getRepositories(userName,callback){
     setTimeout(()=>{
-        console.log("Reading a user from database");
-        // callback({id: id,userName:'Deepak'})
-        return {id: id,userName:'Deepak'};
-    },2000)
+        console.log('Calling Git Api....');
+        callback(['A','B','C']);
+    },2000);
 }
