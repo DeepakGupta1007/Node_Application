@@ -105,3 +105,23 @@ async function applyLogicalOperator(){
 }
 
 // applyLogicalOperator();
+
+
+async function applyRegularExpression(){
+    
+    const result = await Course
+    
+    //Find name starts with Deepak
+    // .find({author:/^Deepak/});
+    
+    //Find name ends with k
+    // .find({author:/k$/i});
+    //Can append i to make case insensitive
+
+    //Contains a string
+    .find({author: /.*pak.*/i});
+    console.log(result);
+
+}
+
+applyRegularExpression();
