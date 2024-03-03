@@ -57,7 +57,7 @@ async function getCoursesSpecificData(){
     .select({name:1}));
     console.log(courses);
 }
-getCoursesSpecificData();
+// getCoursesSpecificData();
 
 async function removeCourses(){
     const result = await Course.deleteMany();
@@ -66,3 +66,27 @@ async function removeCourses(){
 }
 // removeCourses();
 // createCourse();
+
+//Mongoose is built on top of mongodb driver
+
+//Comparison Operator
+//eq-> Equal
+//ne->Not equal
+//gt-> greater than
+//lt-> less than
+//gte-> greater than or equal to
+//lte -> less than or equal to
+//in
+//nin
+
+//Inorder to use comparison  we use {key,value} where key is operator
+//with a $ sign to indicate that this is an operator.
+
+//Function to extract course with price with a condition
+async function filterCourses(){
+    const result = await Course
+    // .find({price: {$gte:10,$lte:20}});
+    .find({prices: {$in:[10,20,30]}})
+    console.log(result);
+}
+
