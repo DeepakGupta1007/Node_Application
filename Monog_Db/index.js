@@ -32,4 +32,24 @@ const course = new Course({
     tags: ['node','mongodb'],
     isPublished: true
 });
-course.save();
+
+// Alternate-1
+course.save()
+.then(()=>console.log('Data Saved..'))
+.catch((err)=>console.log("Error"));
+
+//Alternate-2
+async function createCourse(){
+    const course = new Course({
+        name: 'React.js',
+        author: 'Deepak Gupta',
+        tags: ['Redux','reactJS'],
+        isPublished: true
+    });
+
+    const result = await course.save();
+    console.log(result);
+
+}
+
+createCourse();
