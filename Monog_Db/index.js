@@ -90,3 +90,18 @@ async function filterCourses(){
     console.log(result);
 }
 
+
+//Logical Operators
+//or
+//and
+
+//Function to implment the query for one of the two criteria
+async function applyLogicalOperator(){
+    const result = await Course
+    .find()
+    // .or({author: "Deepak Gupta"},{isPublished:false});
+    .and([{author: "Deepak Gupta"},{isPublished:false}]);
+    console.log(result);
+}
+
+// applyLogicalOperator();
