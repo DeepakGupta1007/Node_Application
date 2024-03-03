@@ -20,3 +20,16 @@ const courseSchema = new mongoose.Schema({
     data: {type:Date,default:Date.now},
     isPublished: Boolean,
 })
+
+//Classes, Objects
+
+
+//Creating a class
+ const Course = mongoose.model('Course',courseSchema);
+const course = new Course({
+    name: 'Node.js',
+    author: 'Deepak',
+    tags: ['node','mongodb'],
+    isPublished: true
+});
+course.save();
