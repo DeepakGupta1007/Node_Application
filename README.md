@@ -141,3 +141,11 @@ Projects-->
 Move all the genres API to a folder 
 
 Development of REST API's is done using express.
+
+11. Async and await-> helps  to write async code like sync.
+
+
+--------------------
+Part-5
+1. MongoDb-NoSQL Database
+Install mongodB compass.
