@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { brotliDecompress } = require('zlib');
 mongoose.set('strictQuery', true);
 // Connection URI
 const uri = 'mongodb://localhost/Deepak'; // Change this to your MongoDB URI
@@ -124,4 +125,73 @@ async function applyRegularExpression(){
 
 }
 
-applyRegularExpression();
+// applyRegularExpression();
+
+//Count is a method for counting the entries with filter
+
+//Pagination
+async function pagination(){
+    const pageNumber =2;
+    const pageSize   =10;
+
+
+    const result = await Course
+    .find({author: "Deepak Gupta",isPublished:true})
+    .skip((pageNumber-1)*pageSize)
+    .limit(pageSize);
+}
+
+
+
+//We are updating a document with query first
+//Approach -1
+//  Query First
+//  findById()
+//  modify()
+//  save()
+
+// Approach -2
+// Update first
+// Update Directly
+// Optionally - get the updated document first
+// 
+
+//Approach-1
+ async function updateDocument1(id){
+    const course = await Course.findById(id);
+    if(!course)  return;
+
+    course.isPublished = true;
+    course.author= 'Rishabh Gupta';
+    course.name = 'Aastha Gupta'
+    const result = await course.save();
+
+    console.log(result);
+ }
+
+//  updateDocument1('65e494d6b9df4a6e06474c48');
+ //Approach-2
+ async function updateDocument2(id){
+    const result = await Course.update({_id:id},{
+        $set :{
+            author:'Ramji',
+            isPublished:false
+        }
+    });
+
+    console.log(result);
+
+    //Alternative -2   We need to pass an additional parameter to get the updated data 
+    const res = await Course.findByIdAndUpdate(id,{
+        $set :{
+            author:'Radhika',
+            isPublished:false
+        }
+    },{new: true});
+
+
+    console.log(res);
+
+
+ }
+updateDocument2('65e494d6b9df4a6e06474c48');
