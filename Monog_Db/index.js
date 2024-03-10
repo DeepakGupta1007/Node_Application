@@ -194,4 +194,19 @@ async function pagination(){
 
 
  }
-updateDocument2('65e494d6b9df4a6e06474c48');
+// updateDocument2('65e494d6b9df4a6e06474c48');
+
+//How to remove a specific data from a document in MongoDb
+async function removeCourseById(id){
+    //Alternative-1
+    // const result = await Course.deleteOne({_id:id});
+    // console.log(result);
+
+
+    //Alternative-2
+    // const result = await Course.findByIdAndRemove(id);
+    // console.log(result);
+
+}
+
+removeCourseById('65e494d6b9df4a6e06474c48');
